@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site do TabuH</title>
     <style>
-        /* Estilos existentes */
         body {
             background-color: #f4f4f4;
             color: #800000;
@@ -179,20 +178,6 @@
             color: green;
             margin-top: 10px;
         }
-        /* Estilos para o contador de inscritos */
-        #contador-container {
-            text-align: center;
-            margin: 20px auto; /* Alinhado ao centro da página */
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        #contador {
-            font-size: 24px;
-            font-weight: bold;
-            color: #800000;
-        }
     </style>
 </head>
 <body>
@@ -207,18 +192,10 @@
                 <li><a href="#loja">Loja</a></li>
                 <li><a href="#contato">Contato</a></li>
                 <li><a href="#redes-sociais">Redes Sociais</a></li>
-                <li><a href="historia.html">História</a></li>
+                <li><a href="historia.html">História</a></li> <!-- Link para a história -->
             </ul>
         </nav>
     </header>
-    
-    <!-- Contador de inscritos -->
-    <section id="contador-container">
-        <h2>Inscritos</h2>
-        <p id="contador">0 Inscritos</p>
-        <button onclick="adicionarInscrito()">Inscrever-se</button>
-    </section>
-    
     <section id="biografia">
         <h2>Biografia</h2>
         <div class="biografia-container">
@@ -235,7 +212,7 @@
             </div>
         </div>
     </section>
-
+    
     <section id="catalogo">
         <h2>Catálogo</h2>
         <div class="carrossel">
@@ -249,8 +226,8 @@
                     <h3>Haux - A libertação é para todos (2022)</h3>
                 </div>
                 <div class="slide">
-                    <img src="https://i.ibb.co/FmZPfbq/Design-sem-nome-1.png" alt="Capa do álbum Raízes - Espiritualidade e pertencimento">
-                    <h3>Raízes - Espiritualidade e pertencimento (2021)</h3>
+                    <img src="https://i.ibb.co/FmZPfbq/Design-sem-nome-1.png" alt="Capa do álbum TABU">
+                    <h3>TABU (2021)</h3>
                 </div>
                 <div class="slide">
                     <img src="https://i.ibb.co/jThCTZM/Design-sem-nome.png" alt="Capa do álbum Odara - O caminho da luz">
@@ -360,25 +337,10 @@
         // Validação do formulário de contato
         document.getElementById('contactForm').onsubmit = function(event) {
             event.preventDefault(); // Evitar o envio padrão
+            // Aqui você pode adicionar lógica para enviar a mensagem (e.g., via API)
             document.getElementById('successMessage').style.display = 'block';
             this.reset(); // Limpar o formulário
         };
-
-        // Contador de inscritos
-        let inscritos = localStorage.getItem('inscritos') ? parseInt(localStorage.getItem('inscritos')) : 0;
-
-        function atualizarContador() {
-            document.getElementById('contador').innerText = inscritos + " Inscritos";
-        }
-
-        function adicionarInscrito() {
-            inscritos++;
-            localStorage.setItem('inscritos', inscritos);
-            atualizarContador();
-        }
-
-        // Atualiza o contador ao carregar a página
-        atualizarContador();
     </script>
 </body>
 </html>
