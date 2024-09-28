@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site do TabuH</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #800000;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgba(128, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            margin: 10px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 10px;
+            transition: background 0.3s;
+            border-radius: 5px;
+        }
+        nav ul li a:hover {
+            background-color: white;
+            color: #800000;
+        }
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;  
+            transform: translateY(20px);  
+            transition: opacity 0.5s, transform 0.5s;  
+        }
+        section.visible {
+            opacity: 1;  
+            transform: translateY(0);  
+        }
+        h1, h2 {
+            border-bottom: 2px solid #800000;
+            padding-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #800000;
+            color: white;
+            margin-top: 20px;
+        }
+        .carrossel {
+            position: relative;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 20px auto;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .slide {
+            flex: 0 0 100%; /* Alinhado à página */
+            box-sizing: border-box;
+            text-align: center; /* Centraliza o texto da descrição */
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .nav-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .nav-button {
+            background-color: rgba(128, 0, 0, 0.8);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+            border-radius: 5px;
+        }
+        .nav-button:hover {
+            background-color: white;
+            color: #800000;
+        }
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .galeria img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .biografia-container {
+            display: flex;
+            align-items: center;
+        }
+        .biografia-container img {
+            width: 180px; /* Aumentando o tamanho da imagem */
+            height: 180px;
+            border-radius: 90px;
+            margin-right: 20px;
+        }
+        .biografia-container div {
+            text-align: justify; /* Justificando o texto */
+        }
+        blockquote {
+            font-style: italic;
+            margin: 20px 0;
+            padding-left: 20px;
+            border-left: 3px solid #800000;
+        }
+        #redes-sociais ul {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            flex-wrap: wrap; 
+        }
+        #redes-sociais ul li {
+            margin: 0 10px;
+        }
+        .formulario {
+            display: flex;
+            flex-direction: column;
+        }
+        .formulario input, .formulario textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #800000;
+            border-radius: 5px;
+        }
+        .formulario button {
+            background-color: #800000;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .formulario button:hover {
+            background-color: white;
+            color: #800000;
+        }
+        .mensagem-sucesso {
+            display: none;
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TabuH</h1>
+        <nav>
+            <ul>
+                <li><a href="#biografia">Biografia</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#videos">Vídeos</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#loja">Loja</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#redes-sociais">Redes Sociais</a></li>
+                <li><a href="historia.html">História</a></li> <!-- Link para a história -->
+            </ul>
+        </nav>
+    </header>
+    <section id="biografia">
+        <h2>Biografia</h2>
+        <div class="biografia-container">
+            <img src="https://i.ibb.co/kxyRVP5/Imagem-do-Whats-App-de-2024-09-26-s-12-52-55-f626aadd.jpg" alt="Foto de TabuH">
+            <div>
+                <p>TabuH é poeta, escritor, produtor fonográfico, cantor e compositor. O autor é um criador singular, mergulhado na espiritualidade e que representa a cultura viva popular.</p>
+                <p>Com uma carreira rica, semeia reflexões sobre os mistérios da existência e leva seu trabalho a diversos lugares.</p>
+                <p>Em sua busca, ele reflete sobre a multiplicidade da vida que se manifesta em sua arte.</p>
+                <blockquote>
+                    <p><i>E quando parecer que não tem pelo que agradecer,</p>
+                    <p>Tente olhar no fundo quem é você</p> 
+                    <p>E agradeça por ser.</i></p>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+    
+    <section id="catalogo">
+        <h2>Catálogo</h2>
+        <div class="carrossel">
+            <div class="slides">
+                <div class="slide">
+                    <img src="https://i.ibb.co/yq8fp4F/Design-sem-nome-3.png" alt="Capa do álbum Peripécias de uma mente sã">
+                    <h3>Peripécias de uma mente sã (2023)</h3>
+                </div>
+                <div class="slide">
+                    <img src="https://i.ibb.co/3NDvtSg/Design-sem-nome-2.png" alt="Capa do álbum Haux - A libertação é para todos">
+                    <h3>Haux - A libertação é para todos (2022)</h3>
+                </div>
+                <div class="slide">
+                    <img src="https://i.ibb.co/FmZPfbq/Design-sem-nome-1.png" alt="Capa do álbum TABU">
+                    <h3>TABU (2021)</h3>
+                </div>
+                <div class="slide">
+                    <img src="https://i.ibb.co/jThCTZM/Design-sem-nome.png" alt="Capa do álbum Odara - O caminho da luz">
+                    <h3>Odara - O caminho da luz (2018)</h3>
+                </div>
+                <div class="slide">
+                    <img src="https://i.ibb.co/v1Z8Sn2/Design-sem-nome-4.png" alt="Capa do álbum Uma volta sem ponteiros">
+                    <h3>Uma volta sem ponteiros (2017)</h3>
+                </div>
+            </div>
+            <div class="nav-buttons">
+                <button class="nav-button" id="prevButton">&#10094;</button>
+                <button class="nav-button" id="nextButton">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="videos">
+        <h2>Vídeos</h2>
+        <div class="video">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/zAEYF0SeDFQ" frameborder="0" allowfullscreen></iframe>
+            <p>Abaixo à ilusão - Feira de Acari/RJ - Na Mata produções.</p>
+        </div>
+    </section>
+
+    <section id="galeria">
+        <h2>Galeria de Imagens</h2>
+        <div class="galeria">
+            <img src="https://i.ibb.co/8XfVJ72/1.jpg" alt="TabuH em performance">
+            <img src="https://i.ibb.co/8KBkLbv/2.jpg" alt="TabuH com fãs">
+            <img src="https://i.ibb.co/hHxCV3T/3.jpg" alt="TabuH em estúdio">
+            <img src="https://i.ibb.co/S0gPjwG/4.jpg" alt="TabuH em evento ao vivo">
+            <img src="https://i.ibb.co/s6wcNKL/5.jpg" alt="TabuH na natureza">
+            <img src="https://i.ibb.co/YRb2CMR/eu.jpg" alt="Imagem pessoal de TabuH">
+            <img src="https://i.ibb.co/kxyRVP5/Imagem-do-Whats-App-de-2024-09-26-s-12-52-55-f626aadd.jpg" alt="Outra foto de TabuH, artista multifacetado">
+            <img src="https://i.ibb.co/fxp2CHt/Imagem-do-Whats-App-de-2024-09-26-s-12-52-56-2f58a0ad.jpg" alt="TabuH sorrindo em um ambiente descontraído">
+        </div>
+    </section>
+
+    <section id="loja">
+        <h2>Loja</h2>
+        <p><a href="https://livros-do-tabuh.lojaintegrada.com.br" target="_blank">Visite nossa loja online!</a></p>
+    </section>
+    
+    <section id="contato">
+        <h2>Contato</h2>
+        <div class="formulario">
+            <form id="contactForm">
+                <input type="text" name="nome" placeholder="Seu Nome" required>
+                <input type="email" name="email" placeholder="Seu Email" required>
+                <textarea name="mensagem" rows="4" placeholder="Sua Mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <div class="mensagem-sucesso" id="successMessage">Mensagem enviada com sucesso!</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 TabuH</p>
+        <section id="redes-sociais">
+            <h2>Redes Sociais</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/@tabuh3575" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube" width="30"></a></li>
+                <li><a href="https://www.instagram.com/tabuh.br/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="30"></a></li>
+                <li><a href="https://www.facebook.com/tabuh.tabuh.718?locale=pt_BR" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook" width="30"></a></li>
+                <li><a href="https://open.spotify.com/intl-pt/artist/7IqvDSR4ntmAeFsxQIM6QF?si=uTk4WxLLSeiSsNi-TxUvJA" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" alt="Spotify" width="30"></a></li>
+                <li><a href="https://api.whatsapp.com/send/?phone=5521967216733&text&type=phone_number&app_absent=0" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30"></a></li>
+            </ul>
+        </section>
+    </footer>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const slide = document.querySelectorAll('.slide');
+        let currentIndex = 0;
+
+        document.getElementById('nextButton').onclick = function() {
+            currentIndex = (currentIndex + 1) % slide.length;
+            updateCarousel();
+        };
+
+        document.getElementById('prevButton').onclick = function() {
+            currentIndex = (currentIndex - 1 + slide.length) % slide.length;
+            updateCarousel();
+        };
+
+        function updateCarousel() {
+            const offset = -currentIndex * 100; // Alinhamento da imagem
+            slides.style.transform = 'translateX(' + offset + '%)';
+        }
+
+        // Animação de entrada das seções
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Validação do formulário de contato
+        document.getElementById('contactForm').onsubmit = function(event) {
+            event.preventDefault(); // Evitar o envio padrão
+            // Aqui você pode adicionar lógica para enviar a mensagem (e.g., via API)
+            document.getElementById('successMessage').style.display = 'block';
+            this.reset(); // Limpar o formulário
+        };
+    </script>
+</body>
+</html>
