@@ -56,28 +56,6 @@
             border-bottom: 2px solid #800000;
             padding-bottom: 10px;
         }
-        .biografia-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .biografia-container img {
-            width: 180px; 
-            height: 180px;
-            border-radius: 90px;
-            margin-right: 20px;
-        }
-        .subtitulo {
-            font-weight: bold;
-            margin-top: 10px;
-            margin-bottom: 5px;
-        }
-        .foto {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
         .galeria {
             display: flex;
             flex-wrap: wrap;
@@ -89,13 +67,36 @@
             height: auto;
             border-radius: 8px;
         }
+        footer {
+            background-color: #800000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        footer h2 {
+            margin: 10px 0;
+        }
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        footer ul li img {
+            width: 30px;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>A História de TabuH</h1>
         <nav>
-            <ul><li><a href="index.html">início</a></li>
+            <ul>
+                <li><a href="index.html">Início</a></li>
                 <li><a href="#introducao">Introdução</a></li>
                 <li><a href="#musica">Música</a></li>
                 <li><a href="#poesia">Poesia</a></li>
@@ -156,7 +157,7 @@
     <section id="composicoes">
         <h2>Composições</h2>
         <p>TabuH, envolvido com a música dos pés ao Ori, dedica-se ao ofício de nutrir corpo, alma e espírito. Em parceria com César Batuke, Bheara Arruda e Foju Oyé, ele distribui suas músicas para novas sonografias.</p>
-            <p>Ouça as músicas de TabuH na nossa playlist do Spotify:</p>
+        <p>Ouça as músicas de TabuH na nossa playlist do Spotify:</p>
         <iframe src="https://open.spotify.com/embed/playlist/3S07zbZYlOm700xQWsWxld" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     </section>
 
@@ -166,67 +167,19 @@
         Telefone: +55 21 96721-6733</p>
     </section>
 
-</body>
-</html>
-    </section>
+    <footer>
+        <p>&copy; 2024 TabuH</p>
+        <section id="redes-sociais">
+            <h2>Redes Sociais</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/@tabuh3575" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube" width="30"></a></li>
+                <li><a href="https://www.instagram.com/tabuh.br/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="30"></a></li>
+                <li><a href="https://www.facebook.com/tabuh.tabuh.718?locale=pt_BR" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook" width="30"></a></li>
+                <li><a href="https://open.spotify.com/intl-pt/artist/7IqvDSR4ntmAeFsxQIM6QF?si=uTk4WxLLSeiSsNi-TxUvJA" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" alt="Spotify" width="30"></a></li>
+                <li><a href="https://api.whatsapp.com/send/?phone=5521967216733&text&type=phone_number&app_absent=0" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30"></a></li>
+            </ul>
+        </section>
+    </footer>
 
-<footer style="background-color: #800000; color: white; padding: 20px; text-align: center;">
-    <p>&copy; 2024 TabuH | Todos os direitos reservados.</p>
-    <section id="redes-sociais">
-        <h2>Redes Sociais</h2>
-        <ul style="list-style-type: none; padding: 0;">
-            <li style="display: inline; margin: 0 10px;"><a href="https://www.youtube.com/@tabuh3575" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube" width="30"></a></li>
-            <li style="display: inline; margin: 0 10px;"><a href="https://www.instagram.com/tabuh.br/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="30"></a></li>
-            <li style="display: inline; margin: 0 10px;"><a href="https://www.facebook.com/tabuh.tabuh.718?locale=pt_BR" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook" width="30"></a></li>
-            <li style="display: inline; margin: 0 10px;"><a href="https://open.spotify.com/intl-pt/artist/7IqvDSR4ntmAeFsxQIM6QF?si=uTk4WxLLSeiSsNi-TxUvJA" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" alt="Spotify" width="30"></a></li>
-            <li style="display: inline; margin: 0 10px;"><a href="https://api.whatsapp.com/send/?phone=5521967216733&text&type=phone_number&app_absent=0" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30"></a></li>
-        </ul>
-    </section>
-</footer>
-
-
-    <script>
-        const slides = document.querySelector('.slides');
-        const slide = document.querySelectorAll('.slide');
-        let currentIndex = 0;
-
-        document.getElementById('nextButton').onclick = function() {
-            currentIndex = (currentIndex + 1) % slide.length;
-            updateCarousel();
-        };
-
-        document.getElementById('prevButton').onclick = function() {
-            currentIndex = (currentIndex - 1 + slide.length) % slide.length;
-            updateCarousel();
-        };
-
-        function updateCarousel() {
-            const offset = -currentIndex * 100; // Alinhamento da imagem
-            slides.style.transform = 'translateX(' + offset + '%)';
-        }
-
-        // Animação de entrada das seções
-        const sections = document.querySelectorAll('section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-
-        // Validação do formulário de contato
-        document.getElementById('contactForm').onsubmit = function(event) {
-            event.preventDefault(); // Evitar o envio padrão
-            // Aqui você pode adicionar lógica para enviar a mensagem (e.g., via API)
-            document.getElementById('successMessage').style.display = 'block';
-            this.reset(); // Limpar o formulário
-        };
-    </script>
 </body>
 </html>
