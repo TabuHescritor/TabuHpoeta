@@ -195,7 +195,7 @@
                 <li><a href="#galeria">Galeria</a></li>
                 <li><a href="#loja">Loja</a></li>
                 <li><a href="#redes-sociais">Redes Sociais</a></li>
-                <li><a href="historia.html">História</a></li> <!-- Adicionado aqui -->
+                <li><a href="historia.html">História</a></li>
             </ul>
         </nav>
     </header>
@@ -292,7 +292,7 @@
 
         function showSlide(index) {
             const totalSlides = slides.children.length;
-            currentIndex = (index + totalSlides) % totalSlides; // Circular navigation
+            currentIndex = (index + totalSlides) % totalSlides; // Navegação circular
             slides.style.transform = `translateX(-${currentIndex * 100}%)`;
         }
 
