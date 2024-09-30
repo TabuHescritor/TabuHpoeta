@@ -180,6 +180,28 @@
         #redes-sociais ul li {
             margin: 0 10px;
         }
+        .formulario {
+            display: flex;
+            flex-direction: column;
+        }
+        .formulario input, .formulario textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #800000;
+            border-radius: 5px;
+        }
+        .formulario button {
+            background-color: #800000;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .formulario button:hover {
+            background-color: white;
+            color: #800000;
+        }
         .mensagem-sucesso {
             display: none;
             color: green;
@@ -199,6 +221,8 @@
                 <li><a href="#videos">Vídeos</a></li>
                 <li><a href="#galeria">Galeria</a></li>
                 <li><a href="#loja">Loja</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#redes-sociais">Redes Sociais</a></li>
                 <li><a href="historia.html">História</a></li>
             </ul>
         </nav>
@@ -279,6 +303,19 @@
         <p><a href="https://livros-do-tabuh.lojaintegrada.com.br" target="_blank">Visite nossa loja online!</a></p>
     </section>
     
+    <section id="contato">
+        <h2>Contato</h2>
+        <div class="formulario">
+            <form id="contactForm">
+                <input type="text" name="nome" placeholder="Seu Nome" required>
+                <input type="email" name="email" placeholder="Seu Email" required>
+                <textarea name="mensagem" rows="4" placeholder="Sua Mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <div class="mensagem-sucesso" id="successMessage">Mensagem enviada com sucesso!</div>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2024 TabuH</p>
         <section id="redes-sociais">
@@ -327,6 +364,14 @@
         sections.forEach(section => {
             observer.observe(section);
         });
+
+        // Validação do formulário de contato
+        document.getElementById('contactForm').onsubmit = function(event) {
+            event.preventDefault(); // Evitar o envio padrão
+            // Aqui você pode adicionar lógica para enviar a mensagem (e.g., via API)
+            document.getElementById('successMessage').style.display = 'block';
+            this.reset(); // Limpar o formulário
+        };
 
         // Menu responsivo
         document.getElementById('menu-icon').onclick = function() {
