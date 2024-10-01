@@ -26,12 +26,6 @@
         .logo {
             font-size: 24px;
         }
-        .menu-icon {
-            display: none;
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-        }
         nav ul {
             list-style-type: none;
             padding: 0;
@@ -53,25 +47,6 @@
         nav ul li a:hover {
             background-color: white;
             color: #800000;
-        }
-        @media (max-width: 768px) {
-            nav ul {
-                display: none; /* Esconde o menu por padrão */
-                flex-direction: column;
-                width: 100%;
-                background-color: rgba(128, 0, 0, 0.8);
-                position: absolute;
-                top: 60px; /* Altura do header */
-                left: 0;
-            }
-
-            nav ul.active {
-                display: flex; /* Mostra o menu quando ativo */
-            }
-
-            .menu-icon {
-                display: block; /* Mostra o ícone de menu em dispositivos móveis */
-            }
         }
         section {
             max-width: 800px;
@@ -214,7 +189,6 @@
         <h1>TabuH</h1>
         <nav>
             <div class="logo">TabuH</div>
-            <div class="menu-icon" id="menu-icon">☰</div>
             <ul class="nav-links" id="nav-links">
                 <li><a href="#biografia">Biografia</a></li>
                 <li><a href="#catalogo">Catálogo</a></li>
