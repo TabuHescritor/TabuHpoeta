@@ -4,30 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site do TabuH</title>
-    <!-- Adicionando Google Fonts para um visual moderno -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #f4f4f4;
             color: #800000;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
         }
-
         header {
             background-color: rgba(128, 0, 0, 0.8);
             color: white;
-            padding: 20px;
+            padding: 10px;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-
         nav {
-            margin: 20px 0;
-            position: relative;
+            margin: 10px 0;
         }
-
+        .logo {
+            font-size: 24px;
+        }
         nav ul {
             list-style-type: none;
             padding: 0;
@@ -35,79 +32,60 @@
             justify-content: center;
             flex-wrap: wrap;
         }
-
         nav ul li {
-            margin: 0 15px;
+            margin: 0 10px;
         }
-
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
-            padding: 10px 15px;
+            padding: 8px 10px;
             transition: background 0.3s;
             border-radius: 5px;
         }
-
         nav ul li a:hover {
             background-color: white;
             color: #800000;
         }
-
         section {
-            max-width: 900px;
+            max-width: 800px;
             margin: 20px auto;
-            padding: 30px;
+            padding: 20px;
             background: white;
-            border-radius: 10px;
+            border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s, transform 0.5s;
         }
-
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         h1, h2 {
             border-bottom: 2px solid #800000;
             padding-bottom: 10px;
         }
-
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 10px;
             background-color: #800000;
             color: white;
-            margin-top: 40px;
+            margin-top: 20px;
         }
-
         .carrossel {
             position: relative;
             overflow: hidden;
             max-width: 100%;
             margin: 20px auto;
         }
-
         .slides {
             display: flex;
             transition: transform 0.5s ease;
         }
-
         .slide {
             flex: 0 0 100%;
             box-sizing: border-box;
             text-align: center;
         }
-
         .slide img {
             width: 100%;
             height: auto;
             border-radius: 8px;
         }
-
         .nav-buttons {
             position: absolute;
             top: 50%;
@@ -116,7 +94,6 @@
             justify-content: space-between;
             transform: translateY(-50%);
         }
-
         .nav-button {
             background-color: rgba(128, 0, 0, 0.8);
             color: white;
@@ -126,120 +103,76 @@
             transition: background 0.3s;
             border-radius: 5px;
         }
-
         .nav-button:hover {
             background-color: white;
             color: #800000;
         }
-
         .galeria {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
         }
-
         .galeria img {
             width: 100%;
             height: auto;
             aspect-ratio: 1;
             object-fit: cover;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s;
+            border-radius: 8px;
         }
-
-        .galeria img:hover {
-            transform: scale(1.05);
-        }
-
         .biografia-container {
             display: flex;
             align-items: center;
-            gap: 20px;
         }
-
         .biografia-container img {
-            width: 200px;
-            height: 200px;
-            border-radius: 100px;
+            width: 180px;
+            height: 180px;
+            border-radius: 90px;
             margin-right: 20px;
         }
-
         .biografia-container div {
             text-align: justify;
         }
-
         blockquote {
             font-style: italic;
             margin: 20px 0;
             padding-left: 20px;
             border-left: 3px solid #800000;
         }
-
         #redes-sociais ul {
             display: flex;
             justify-content: center;
             padding: 0;
             flex-wrap: wrap;
         }
-
         #redes-sociais ul li {
-            margin: 0 15px;
+            margin: 0 10px;
         }
-
-        #redes-sociais ul li a {
-            transition: transform 0.3s;
-        }
-
-        #redes-sociais ul li a:hover {
-            transform: scale(1.2);
-        }
-
         .formulario {
             display: flex;
             flex-direction: column;
-            max-width: 500px;
-            margin: 0 auto;
         }
-
         .formulario input, .formulario textarea {
-            margin-bottom: 15px;
-            padding: 12px;
+            margin-bottom: 10px;
+            padding: 10px;
             border: 1px solid #800000;
             border-radius: 5px;
         }
-
         .formulario button {
             background-color: #800000;
             color: white;
             border: none;
-            padding: 12px;
+            padding: 10px;
             cursor: pointer;
             border-radius: 5px;
-            transition: background 0.3s;
         }
-
         .formulario button:hover {
             background-color: white;
             color: #800000;
         }
-
         .mensagem-sucesso {
             display: none;
             color: green;
             margin-top: 10px;
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .biografia-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .biografia-container img {
-                margin-bottom: 20px;
-            }
         }
     </style>
 </head>
@@ -258,7 +191,6 @@
             </ul>
         </nav>
     </header>
-    
     <section id="biografia">
         <h2>Biografia</h2>
         <div class="biografia-container">
@@ -266,7 +198,6 @@
             <div>
                 <p>TabuH é poeta, escritor, produtor fonográfico, cantor e compositor. O autor é um criador singular, mergulhado na espiritualidade e que representa a cultura viva popular.</p>
                 <p>Com uma carreira rica, semeia reflexões sobre os mistérios da existência e leva seu trabalho a diversos lugares.</p>
-                <p>Em sua busca, ele reflete sobre a multiplicidade da vida que se manifesta em sua arte.</p>
                 <blockquote>
                     <p><i>E quando parecer que não tem pelo que agradecer,</p>
                     <p>Tente olhar no fundo quem é você</p> 
@@ -275,7 +206,7 @@
             </div>
         </div>
     </section>
-
+    
     <section id="catalogo">
         <h2>Catálogo</h2>
         <div class="carrossel">
@@ -289,79 +220,79 @@
                     <h3>Haux - A libertação é para todos (2022)</h3>
                 </div>
                 <div class="slide">
-                    <img src="https://i.ibb.co/FmZPfbq/Design-sem-nome-4.png" alt="Capa do álbum Tabuh e os Imortais">
-                    <h3>Tabuh e os Imortais (2021)</h3>
+                    <img src="https://i.ibb.co/FmZPfbq/Design-sem-nome-1.png" alt="Capa do álbum TABU">
+                    <h3>TABU (2021)</h3>
+                </div>
+                <div class="slide">
+                    <img src="https://i.ibb.co/jThCTZM/Design-sem-nome.png" alt="Capa do álbum Odara - O caminho da luz">
+                    <h3>Odara - O caminho da luz (2018)</h3>
+                </div>
+                <div class="slide">
+                    <img src="https://i.ibb.co/v1Z8Sn2/Design-sem-nome-4.png" alt="Capa do álbum Uma volta sem ponteiros">
+                    <h3>Uma volta sem ponteiros (2017)</h3>
                 </div>
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" id="prevBtn">&larr;</button>
-                <button class="nav-button" id="nextBtn">&rarr;</button>
+                <button class="nav-button" id="prevButton">&#10094;</button>
+                <button class="nav-button" id="nextButton">&#10095;</button>
             </div>
+        </div>
+    </section>
+
+    <section id="videos">
+        <h2>Vídeos</h2>
+        <div class="video">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/JRwTRDn2hRs" title="Videoclipe de Peripécias de uma mente sã" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </section>
 
     <section id="galeria">
         <h2>Galeria</h2>
         <div class="galeria">
-            <img src="https://via.placeholder.com/400x400" alt="Imagem 1">
-            <img src="https://via.placeholder.com/400x400" alt="Imagem 2">
-            <img src="https://via.placeholder.com/400x400" alt="Imagem 3">
-            <img src="https://via.placeholder.com/400x400" alt="Imagem 4">
+            <img src="https://i.ibb.co/kxyRVP5/Imagem-do-Whats-App-de-2024-09-26-s-12-52-55-f626aadd.jpg" alt="TabuH - Foto 1">
+            <img src="https://i.ibb.co/3NDvtSg/Design-sem-nome-2.png" alt="TabuH - Foto 2">
+            <img src="https://i.ibb.co/FmZPfbq/Design-sem-nome-1.png" alt="TabuH - Foto 3">
+            <img src="https://i.ibb.co/v1Z8Sn2/Design-sem-nome-4.png" alt="TabuH - Foto 4">
+        </div>
+    </section>
+
+    <section id="loja">
+        <h2>Loja</h2>
+        <div class="formulario">
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu e-mail" required>
+            <textarea placeholder="Mensagem"></textarea>
+            <button type="submit">Enviar</button>
         </div>
     </section>
 
     <section id="redes-sociais">
         <h2>Redes Sociais</h2>
-        <div>
-            <ul>
-                <li><a href="https://www.instagram.com/tabuhms" target="_blank"><img src="https://via.placeholder.com/40x40" alt="Instagram"></a></li>
-                <li><a href="https://www.youtube.com/channel/UCqETxynUJwYoCNxOIVHclzA" target="_blank"><img src="https://via.placeholder.com/40x40" alt="YouTube"></a></li>
-            </ul>
-        </div>
+        <ul>
+            <li><a href="https://instagram.com">Instagram</a></li>
+            <li><a href="https://facebook.com">Facebook</a></li>
+            <li><a href="https://youtube.com">YouTube</a></li>
+        </ul>
     </section>
 
     <footer>
-        <p>&copy; 2024 TabuH. Todos os direitos reservados.</p>
+        <p>&copy; 2024 TabuH - Todos os direitos reservados.</p>
     </footer>
 
     <script>
-        // Carrossel Automático
-        let slideIndex = 0;
         const slides = document.querySelector('.slides');
-        const totalSlides = document.querySelectorAll('.slide').length;
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        let index = 0;
 
-        const showSlides = () => {
-            slideIndex = (slideIndex + 1) % totalSlides;
-            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-        };
+        function showSlide(i) {
+            const totalSlides = slides.children.length;
+            index = (i + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(${-index * 100}%)`;
+        }
 
-        setInterval(showSlides, 3000); // Troca de slide a cada 3 segundos
-
-        // Botões de navegação manual
-        document.getElementById('prevBtn').addEventListener('click', () => {
-            slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
-            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-        });
-
-        document.getElementById('nextBtn').addEventListener('click', () => {
-            slideIndex = (slideIndex + 1) % totalSlides;
-            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-        });
-
-        // Aparecer seção ao rolar
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.5
-        });
-
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
+        prevButton.addEventListener('click', () => showSlide(index - 1));
+        nextButton.addEventListener('click', () => showSlide(index + 1));
     </script>
 </body>
 </html>
