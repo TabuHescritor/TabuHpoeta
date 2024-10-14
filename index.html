@@ -21,6 +21,7 @@
         }
         nav {
             margin: 10px 0;
+            position: relative;
         }
         .logo {
             font-size: 24px;
@@ -54,6 +55,13 @@
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;  
+            transform: translateY(20px);  
+            transition: opacity 0.5s, transform 0.5s;  
+        }
+        section.visible {
+            opacity: 1;  
+            transform: translateY(0);  
         }
         h1, h2 {
             border-bottom: 2px solid #800000;
@@ -77,9 +85,9 @@
             transition: transform 0.5s ease;
         }
         .slide {
-            flex: 0 0 100%;
+            flex: 0 0 100%; /* Alinhado à página */
             box-sizing: border-box;
-            text-align: center;
+            text-align: center; /* Centraliza o texto da descrição */
         }
         .slide img {
             width: 100%;
@@ -124,13 +132,13 @@
             align-items: center;
         }
         .biografia-container img {
-            width: 180px;
+            width: 180px; /* Aumentando o tamanho da imagem */
             height: 180px;
             border-radius: 90px;
             margin-right: 20px;
         }
         .biografia-container div {
-            text-align: justify;
+            text-align: justify; /* Justificando o texto */
         }
         blockquote {
             font-style: italic;
@@ -142,7 +150,7 @@
             display: flex;
             justify-content: center;
             padding: 0;
-            flex-wrap: wrap;
+            flex-wrap: wrap; 
         }
         #redes-sociais ul li {
             margin: 0 10px;
@@ -198,6 +206,7 @@
             <div>
                 <p>TabuH é poeta, escritor, produtor fonográfico, cantor e compositor. O autor é um criador singular, mergulhado na espiritualidade e que representa a cultura viva popular.</p>
                 <p>Com uma carreira rica, semeia reflexões sobre os mistérios da existência e leva seu trabalho a diversos lugares.</p>
+                <p>Em sua busca, ele reflete sobre a multiplicidade da vida que se manifesta em sua arte.</p>
                 <blockquote>
                     <p><i>E quando parecer que não tem pelo que agradecer,</p>
                     <p>Tente olhar no fundo quem é você</p> 
@@ -242,57 +251,92 @@
     <section id="videos">
         <h2>Vídeos</h2>
         <div class="video">
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/JRwTRDn2hRs" title="Videoclipe de Peripécias de uma mente sã" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/zAEYF0SeDFQ" frameborder="0" allowfullscreen></iframe>
+            <p>Abaixo à ilusão - Feira de Acari/RJ - Na Mata produções.</p>
         </div>
     </section>
 
     <section id="galeria">
-        <h2>Galeria</h2>
+        <h2>Galeria de Imagens</h2>
         <div class="galeria">
-            <img src="https://i.ibb.co/kxyRVP5/Imagem-do-Whats-App-de-2024-09-26-s-12-52-55-f626aadd.jpg" alt="TabuH - Foto 1">
-            <img src="https://i.ibb.co/3NDvtSg/Design-sem-nome-2.png" alt="TabuH - Foto 2">
-            <img src="https://i.ibb.co/FmZPfbq/Design-sem-nome-1.png" alt="TabuH - Foto 3">
-            <img src="https://i.ibb.co/v1Z8Sn2/Design-sem-nome-4.png" alt="TabuH - Foto 4">
+            <img src="https://i.ibb.co/8XfVJ72/1.jpg" alt="TabuH em performance">
+            <img src="https://i.ibb.co/8KBkLbv/2.jpg" alt="TabuH com fãs">
+            <img src="https://i.ibb.co/hHxCV3T/3.jpg" alt="TabuH em estúdio">
+            <img src="https://i.ibb.co/S0gPjwG/4.jpg" alt="TabuH em evento ao vivo">
+            <img src="https://i.ibb.co/s6wcNKL/5.jpg" alt="TabuH na natureza">
+            <img src="https://i.ibb.co/YRb2CMR/eu.jpg" alt="Imagem pessoal de TabuH">
+            <img src="https://i.ibb.co/kxyRVP5/Imagem-do-Whats-App-de-2024-09-26-s-12-52-55-f626aadd.jpg" alt="Outra foto de TabuH, artista multifacetado">
+            <img src="https://i.ibb.co/fxp2CHt/Imagem-do-Whats-App-de-2024-09-26-s-12-52-56-2f58a0ad.jpg" alt="TabuH sorrindo em um ambiente descontraído">
         </div>
     </section>
 
     <section id="loja">
         <h2>Loja</h2>
-        <div class="formulario">
-            <input type="text" placeholder="Seu nome" required>
-            <input type="email" placeholder="Seu e-mail" required>
-            <textarea placeholder="Mensagem"></textarea>
-            <button type="submit">Enviar</button>
-        </div>
-    </section>
-
-    <section id="redes-sociais">
-        <h2>Redes Sociais</h2>
-        <ul>
-            <li><a href="https://instagram.com">Instagram</a></li>
-            <li><a href="https://facebook.com">Facebook</a></li>
-            <li><a href="https://youtube.com">YouTube</a></li>
-        </ul>
+        <p><a href="https://livros-do-tabuh.lojaintegrada.com.br" target="_blank">Visite nossa loja online!</a></p>
     </section>
 
     <footer>
-        <p>&copy; 2024 TabuH - Todos os direitos reservados.</p>
+        <p>&copy; 2024 TabuH</p>
+        <section id="redes-sociais">
+            <h2>Redes Sociais</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/@tabuh3575" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube" width="30"></a></li>
+                <li><a href="https://www.instagram.com/tabuh.br/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="30"></a></li>
+                <li><a href="https://www.facebook.com/TabuH.Resistencia/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook" width="30"></a></li>
+                <li><a href="https://open.spotify.com/intl-pt/artist/7IqvDSR4ntmAeFsxQIM6QF?si=uTk4WxLLSeiSsNi-TxUvJA" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" alt="Spotify" width="30"></a></li>
+                <li><a href="https://api.whatsapp.com/send/?phone=5521967216733&text&type=phone_number&app_absent=0" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30"></a></li>
+            </ul>
+        </section>
     </footer>
 
     <script>
         const slides = document.querySelector('.slides');
-        const prevButton = document.getElementById('prevButton');
-        const nextButton = document.getElementById('nextButton');
-        let index = 0;
+        const slide = document.querySelectorAll('.slide');
+        let currentIndex = 0;
 
-        function showSlide(i) {
-            const totalSlides = slides.children.length;
-            index = (i + totalSlides) % totalSlides;
-            slides.style.transform = `translateX(${-index * 100}%)`;
+        document.getElementById('nextButton').onclick = function() {
+            currentIndex = (currentIndex + 1) % slide.length;
+            updateCarousel();
+        };
+
+        document.getElementById('prevButton').onclick = function() {
+            currentIndex = (currentIndex - 1 + slide.length) % slide.length;
+            updateCarousel();
+        };
+
+        function updateCarousel() {
+            const offset = -currentIndex * 100; // Alinhamento da imagem
+            slides.style.transform = 'translateX(' + offset + '%)';
         }
 
-        prevButton.addEventListener('click', () => showSlide(index - 1));
-        nextButton.addEventListener('click', () => showSlide(index + 1));
+        // Animação de entrada das seções
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Validação do formulário de contato
+        document.getElementById('contactForm').onsubmit = function(event) {
+            event.preventDefault(); // Evitar o envio padrão
+            // Aqui você pode adicionar lógica para enviar a mensagem (e.g., via API)
+            document.getElementById('successMessage').style.display = 'block';
+            this.reset(); // Limpar o formulário
+        };
+
+        // Menu responsivo
+        document.getElementById('menu-icon').onclick = function() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        };
     </script>
 </body>
 </html>
